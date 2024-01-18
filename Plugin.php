@@ -2,6 +2,8 @@
 
 namespace Pensoft\PageExtension;
 
+use BennoThommo\Meta\Components\MetaList;
+use BennoThommo\Meta\Meta;
 use Cms\Classes\Page;
 use System\Classes\PluginBase;
 
@@ -19,18 +21,27 @@ class Plugin extends PluginBase {
 
     public function register()
     {
-        \Event::listen('backend.form.extendFields', function ($widget){
-            if (!$widget->model instanceof Page) return;
+        \Event::listen('cms.template.extendTemplateSettingsFields', function ($extension, $dataHolder) {
+            if ($dataHolder->templateType === 'page') {
+                $dataHolder->settings[] = [
+                    'property' => 'header_image',
+                    'title' => 'Header Image',
+                    'type' => 'mediafinder'
+                ];
 
-            $widget->addFields([
-                'settings[header_image]' => [
-                    'label'   => 'Header image',
-                    'type'    => 'text',
-                    'comment' => 'pensoft.pageextension::lang.fields.header_image.comment',
-                    'tab'     => 'cms::lang.editor.settings'
-                ],
-            ],'primary'
-            );
+                $dataHolder->settings[] = [
+                    'property' => 'seo_keywords',
+                    'title' => 'Meta Keywords',
+                    'type' => 'text',
+                    'tab' => 'cms::lang.editor.meta',
+                ];
+
+                $dataHolder->settings[] = [
+                    'property' => 'header_text',
+                    'title' => 'Header text',
+                    'type' => 'text',
+                ];
+            }
         });
     }
 }
