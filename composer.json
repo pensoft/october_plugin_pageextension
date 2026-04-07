@@ -1,0 +1,8 @@
+{
+    "name": "pensoft/pageextension-plugin",
+    "type": "october-plugin",
+    "description": "Page Extension for OctoberCMS",
+    "require": {
+        "composer/installers": "~2.0"
+    }
+}
