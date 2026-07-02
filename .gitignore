@@ -1,0 +1,75 @@
+# macOS system files
+._*
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# PHP specific
+*.log
+*.cache
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Composer
+/vendor/
+composer.lock
+composer.phar
+
+# October CMS specific
+/storage/
+/temp/
+/cms/cache/
+/cms/combiner/
+/cms/twig/
+/framework/cache/
+/framework/sessions/
+/framework/views/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Node modules (if any frontend build tools are used)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+/dist/
+/build/
+/public/build/
+
+# Testing
+/coverage/
+.phpunit.result.cache
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
