@@ -6,6 +6,8 @@
       - 'Added header subtitle text'
 1.0.4:
       - 'Added gitignore'
+1.0.5:
+      - 'Added ensureImgAlt'
 
 4.0.1:
     - 'Migrated to OctoberCMS 4 and PHP 8.2'
